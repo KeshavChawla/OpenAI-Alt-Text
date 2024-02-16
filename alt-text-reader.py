@@ -34,6 +34,7 @@ def send_request(user_input):
 
 def main():
     while True:
+        # Prompt to use: Generate an alt-text for this image to use on a website
         user_input = input()
         if user_input == "break":
             break
