@@ -1,51 +1,50 @@
 function openai_get_alt_text(image_url, apiKey) {
-    const url = "https://api.openai.com/v1/chat/completions";
-    // const model = "gpt-3.5-turbo"
-    const model = "gpt-4-vision-preview"
-    messages = [
+  const openai_endpoint = "https://api.openai.com/v1/chat/completions";
+  const openai_model = "gpt-4-vision-preview";
+  messages = [
+    {
+      role: "system",
+      content:
+        "You are an assistant to help provide alt-text descriptions for images on websites missing these alt-text attributes..",
+    },
+    {
+      role: "user",
+      content: [
         {
-            "role": "system",
-            "content": "You are an assistant to help provide alt-text descriptions for images on websites missing these alt-text attributes.."
+          type: "text",
+          text: "Generate an alt-text description for this image.",
         },
         {
-
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "Generate an alt-text description for this image.",
-                },
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": image_url
-                    },
-                }
-            ]
+          type: "image_url",
+          image_url: {
+            url: image_url,
+          },
         },
-    ]
-
-    const data = { model, messages }
-    return fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`
-        },
-        body: JSON.stringify(data)
-    }).then(response => response.json())
-      .catch(error => console.error('Error:', error));
+      ],
+    },
+  ];
+  const api_call_data = { openai_model, messages };
+  return fetch(openai_endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(api_call_data),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.error("OpenAI API Call Error:", err));
 }
 
 $(document).ready(async function () {
-    OPEN_AI_API_KEY = null
-    await chrome.storage.local.get(["apiKey"]).then((result) => {
-        $("#apiKey").val(result.apiKey);
-        OPEN_AI_API_KEY = result.apiKey
-    });
+  OPENAI_API_KEY = null;
+  await chrome.storage.local.get(["apiKey"]).then((result) => {
+    $("#apiKey").val(result.apiKey);
+    OPENAI_API_KEY = result.apiKey;
+  });
 
-    $('img:not([alt]), img[alt=""]').each(async function () {
-        res = await openai_get_alt_text(this.src, OPEN_AI_API_KEY);
-        $(this).attr('alt', res.choices[0].message.content)
-    });
+  $('img:not([alt]), img[alt=""]').each(async function () {
+    res = await openai_get_alt_text(this.src, OPENAI_API_KEY);
+    $(this).attr("alt", res.choices[0].message.content);
+  });
 });
