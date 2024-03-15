@@ -24,7 +24,6 @@ function openai_get_alt_text(image_url, apiKey) {
     },
   ];
   const api_call_data = { "model": openai_model, messages };
-  console.log(api_call_data)
   return fetch(openai_endpoint, {
     method: "POST",
     headers: {
