@@ -5,7 +5,7 @@ function openai_get_alt_text(image_url, apiKey) {
     {
       role: "system",
       content:
-        "You are an assistant to help provide alt-text descriptions for images on websites missing these alt-text attributes..",
+        "You are an assistant to help provide alt-text descriptions for images on websites missing these alt-text attributes. Generate and return back just an alt-text description for this image. Don't preface your answer with alt-text or any other indicator. Make sure that alt-text you provide follows the recommended guidelines for alt-text on the web.",
     },
     {
       role: "user",
@@ -23,7 +23,8 @@ function openai_get_alt_text(image_url, apiKey) {
       ],
     },
   ];
-  const api_call_data = { openai_model, messages };
+  const api_call_data = { "model": openai_model, messages };
+  console.log(api_call_data)
   return fetch(openai_endpoint, {
     method: "POST",
     headers: {
