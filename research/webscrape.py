@@ -2,6 +2,7 @@
 
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 def get_ca_govt_links():
     url = "https://www.canada.ca/en/government/dept.html"
@@ -25,10 +26,7 @@ def get_ca_govt_links():
 
 
 def alt_text_prevalence(urls,print_alt_texts=True):
-    total_num_urls = 0
-    total_num_compliant_urls = 0 # compliant = for every img tag, there is an alt-text (even if empty)
-    total_num_imgs = 0 # across all websites
-    total_num_compliant_imgs = 0 # across all websites
+    df_list = []
 
     for url in urls:
         try:
@@ -39,6 +37,7 @@ def alt_text_prevalence(urls,print_alt_texts=True):
                 
                 img_tags = soup.find_all('img')
 
+                # # uncomment for DEBUG
                 # for tag in img_tags:
                 #     print(f"IMG TAG: {tag}")
                 
@@ -56,25 +55,41 @@ def alt_text_prevalence(urls,print_alt_texts=True):
                 num_alt_texts = len(valid_alt_texts)
                 num_empty_alt_text = len([alt for alt in valid_alt_texts if alt == ""])
 
-                print(f"On {url}, there were {num_imgs} images and {num_alt_texts} alt-texts, {num_empty_alt_text} of which were empty. {float(num_alt_texts) / float(num_imgs) * 100}% of images on this page were compliant (have an alt-text).")
+
+                row_dict = {"total_images": num_imgs,
+                            "compliant_imgs": num_alt_texts,
+                            "compliant_imgs_pct": round(float(num_alt_texts) / float(num_imgs) * 100,0),
+                            "empty_alt_text": num_empty_alt_text,
+                            "compliant": False}
+
+                if print_alt_texts:
+                    print(f"On {url}, there were {num_imgs} images and {num_alt_texts} alt-texts, {num_empty_alt_text} of which were empty. {row_dict['compliant_imgs_pct']}% of images on this page were compliant (have an alt-text).")
                 
-                total_num_imgs += num_imgs
-                total_num_compliant_imgs += num_alt_texts
-
+                
                 if num_alt_texts == num_imgs:
-                    total_num_compliant_urls += 1
-                total_num_urls += 1
-            # else:
-            #     print(f"Failed to retrieve the webpage {url}")
+                    row_dict["compliant"] = True
+                else:
+                    print(f"NON-COMPLIANT! {url}")
+
+                df_list.append(row_dict)
         except Exception as e:
-            # print(e)
-            # print(f"Failed to call requests.get({url})")
-            continue      
+            continue   
+
+    df = pd.DataFrame(df_list)
+    df.to_csv("output.csv", index=False)
+
+    total_num_urls = len(df.index)
+    total_num_compliant_urls = len(df[df["compliant"] == True].index) 
+    total_num_imgs = df["total_images"].sum()
+    total_num_compliant_imgs = df["compliant_imgs"].sum()
+    total_num_empty_alt_text = df["empty_alt_text"].sum()
+
+    print(f"There are {len(urls)} links, {total_num_urls} of which we examined.")
     print(f"Across all {total_num_urls} websites, {float(total_num_compliant_urls) / float(total_num_urls) * 100}% of urls were compliant.")
-    print(f"Within all {total_num_imgs} images across {total_num_urls} websites, {float(total_num_compliant_imgs * 100) / float(total_num_imgs)}% of images were compliant.")      
+    print(f"Within all {total_num_imgs} images across {total_num_urls} websites, {round(float(total_num_compliant_imgs * 100) / float(total_num_imgs))}% of images were compliant.")      
+    print(f"Within all {total_num_imgs} images across {total_num_urls} websites, {round(float(total_num_empty_alt_text * 100) / float(total_num_imgs))}% of images were had empty alt-text.")      
 
-            
-links = get_ca_govt_links()
-print(f"There are {len(links)} links")
-alt_text_prevalence(links, False)
 
+if __name__ == "__main__":         
+    links = get_ca_govt_links()
+    alt_text_prevalence(links, False)
