@@ -1,4 +1,4 @@
-function openai_get_alt_text(image_url, apiKey) {
+function openai_get_alt_text(image_url, apiKey, includeColorDescription, extraDetailedDescription) {
   const openai_endpoint = "https://api.openai.com/v1/chat/completions";
   const openai_model = "gpt-4-vision-preview";
   messages = [
@@ -38,13 +38,29 @@ function openai_get_alt_text(image_url, apiKey) {
 
 $(document).ready(async function () {
   OPENAI_API_KEY = null;
+  OVERWRITE_ALT_TAGS = false;
+  INCLUDE_COLOR_DESCRIPTION = false;
+  EXTRA_DETAILED_DESCRIPTION = false;
+
+  // get settings
   await chrome.storage.local.get(["apiKey"]).then((result) => {
-    $("#apiKey").val(result.apiKey);
     OPENAI_API_KEY = result.apiKey;
   });
+  
+  await chrome.storage.local.get(["overwriteAltTags"]).then((result) => {
+    OVERWRITE_ALT_TAGS = result.apiKey;
+  });
+  
+  await chrome.storage.local.get(["includeColorDescription"]).then((result) => {
+    INCLUDE_COLOR_DESCRIPTION = result.apiKey;
+  });
+  
+  await chrome.storage.local.get(["extraDetailedDescription"]).then((result) => {
+    EXTRA_DETAILED_DESCRIPTION = result.apiKey;
+  });
 
-  $('img:not([alt]), img[alt=""]').each(async function () {
-    res = await openai_get_alt_text(this.src, OPENAI_API_KEY);
+  $(OVERWRITE_ALT_TAGS ? 'img' : 'img:not([alt]), img[alt=""]').each(async function () {
+    res = await openai_get_alt_text(this.src, OPENAI_API_KEY, INCLUDE_COLOR_DESCRIPTION, EXTRA_DETAILED_DESCRIPTION);
     $(this).attr("alt", res.choices[0].message.content);
   });
 });
