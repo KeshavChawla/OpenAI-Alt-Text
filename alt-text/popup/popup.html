@@ -3,10 +3,41 @@
     <link rel="stylesheet" href="popup.css">
   </head>
   <body>
-    <h2>Alt Text Filler</h2>
-    <label for="cheese">OpenAI API Key</label>
+    <div class="inlineContainer">
+      <img src="../images/icon.png" alt="Logo for the extension, showing an icon of an image stacked on top of another box">
+      <div class="headerTextContainer">
+        <h2>Alt Text Filler</h2>
+        <p>Add alt-text to all images on current webpage</p>
+      </div>
+    </div>
+    <label for="apiKey">OpenAI API Key</label>
     <input type="text" id="apiKey" name="apiKey">
     <button id="saveApiKey">Save</button>
+    <hr/>
+    <h3>Settings</h3>
+    <div class="inlineContainer">
+      <label for="overwriteAltTags">Overwrite existing alt tags</label>
+      <label class="switch">
+        <input type="checkbox" id="overwriteAltTags" name="overwriteAltTags">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    
+    <div class="inlineContainer">
+      <label for="includeColorDescription">Include color in description</label>
+      <label class="switch">
+        <input type="checkbox" id="includeColorDescription" name="includeColorDescription">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="inlineContainer">
+      <label for="extraDetailedDescription">Extra detailed description</label>
+      <label class="switch">
+        <input type="checkbox" id="extraDetailedDescription" name="extraDetailedDescription">
+        <span class="slider round"></span>
+      </label>
+    </div>
 
     <script src="../scripts/jquery.min.js"></script>
     <script src="../scripts/popup.js"></script>
