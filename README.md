@@ -50,8 +50,8 @@ Automating checking for these qualities is difficult, and so we sought out to es
   This image below had an alt-text attribute of "tab-1".
   ![unnamed (2)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/30eabb3a-e99e-4a05-90df-7a9b0401a53c)
 
-   This image below had an alt-text attribute of "play-icon", suggesting it was something named for/by developers. 
-   ![unnamed (4)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/ff6b50ea-c8f5-4ee8-8434-608bda046715)
+  This image below had an alt-text attribute of "play-icon", suggesting it was something named for/by developers.
+  ![unnamed (4)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/ff6b50ea-c8f5-4ee8-8434-608bda046715)
 
 
 Among the sample of 60 images, 90% of the images we looked at use alt-text attributes correctly. To determine the accuracy of our web scraper, we created a binomial confidence interval (with our calculations below). The $z$-score that we chose was 1.96 (that corresponds to the 95% confidence interval). With $\hat{p} = \frac{54}{60}$ and $n = 60$, we plugged it into the formula below to calculate our interval.    
