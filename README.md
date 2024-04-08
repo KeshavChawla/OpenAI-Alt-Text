@@ -34,3 +34,21 @@ Anonymized results of the survey can be found in this repo under the [survey fol
 ## Govermental Website Analysis
 
 Research based on our small-scale, non-intrusive polling of websites to determine the lack of existing alt-text can be found in the [research](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/tree/main/research) folder along with the [code](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/blob/main/research/webscrape.py) and the [raw data results](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/blob/main/research/output.csv).
+
+The research revealed some interesting findings. We hand-sampled images that both had an empty alt text and those that had filled out alt text to check for compliance.
+
+1. Even though images followed our definition of compliance (non-empty alt-text attribute), it didn't guarantee that the quality of the alt-text provided enough details about the image.
+
+   The image below had an alt-text attribute of “Nicholas Forget tile”.
+  ![unnamed (1)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/ad9f8465-bf73-40ed-b95a-bebd6b74e78a)
+
+  This image below had an alt-text attribute of "tab-1".
+  ![unnamed (2)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/30eabb3a-e99e-4a05-90df-7a9b0401a53c)
+
+   
+
+3. Secondly we constructed a 95% binomial confidence interval for the accuracy of our web scraper at [82.4%, 97.6%]
+   Thus, we are 95% confident that, after accounting for the error of our web scraper, 79.1% to 93.6% of images on Canadian governmental websites follow WCAG 2.0 guidelines.
+
+![unnamed](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/dac99f8e-5a01-4069-9990-578201935e5b)
+
