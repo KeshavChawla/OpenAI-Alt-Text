@@ -1,0 +1,33 @@
+url,image_src,alt,compliant?
+https://www.infrastructure.gc.ca/index-eng.html,/site/images/people-personnes/chris-bittle.png,Chris Bittle,Y
+https://www.canada.ca/en/services/benefits.html,/etc/designs/canada/wet-boew/assets/wmms-blk.svg,Symbol of the Government of Canada,Y
+https://cjc-ccm.ca/en,/sites/default/files/2022-08/christin-hume.jpg,Person typing at a laptop,Y
+https://www.dcc-cdc.gc.ca/english/homepage/,/uploads/images/_420x205_crop_center-center_none/Nicolas_Forget_tile.jpg,Nicolas Forget tile,N
+https://www.infrastructure.gc.ca/index-eng.html,/site/images/index/feature/accessibility-plan-feature-button-360x204px-en.png,Accessibility Plan 2023-2025,Y
+https://www.canada.ca/en/services/immigration-citizenship.html,/etc/designs/canada/wet-boew/assets/wmms-blk.svg,Symbol of the Government of Canada,Y
+https://ingeniumcanada.org/aviation,/sites/default/files/inline-images/trav_WIS_en.jpg,3 posters from the Women in STEM series,Y
+https://lobbycanada.gc.ca/en/,/media/kqnldgvg/info-lobbying-at-a-glance-2023-11-en_page_1.png,Photo of publication cover,N
+https://www.rmc-cmr.ca/en,https://www.rmc-cmr.ca/sites/default/files/twitter_logo_white_on_blue.png,RMC on Twitter,Y
+https://www.fct-cf.gc.ca/en/home,/content/img/base/FCLogo_nb_e.png,"Cour fédérale""",Y
+https://sst-tss.gc.ca/en,/themes/custom/sst_wxt/assets/svg/logo-bilingual-horizontal-dark.svg,Social Security Tribunal of Canada,Y
+https://www.cppinvestments.com/,https://www.cppinvestments.com/wp-content/themes/thegem-child/common/assets/pause-icon-white.svg,play-icon,N
+https://ingeniumcanada.org/scitech,/sites/default/files/styles/slider_small/public/1913-INGC-Membership-Promo-Campaign-Slider-1600x600-CSTM-20221102-Final%20%281%29.png.webp?itok=7VURWnD0,A girl is pointing at an exhibition as she stands next to a woman in front of an interactive display at the Canada Science and Technology Museum. Display cases are blurred out in the background.,Y
+https://www.rmc-cmr.ca/en,https://www.rmc-cmr.ca/sites/default/files/fb-flogo-blue-broadcast-2.png,RMC on Facebook,Y
+https://ingeniumcanada.org/aviation,/themes/custom/de_theme/dist/img/branding/ingenium-icons.svg,Ingenium Logo,Y
+https://www.canada.ca/en/services/health.html,/etc/designs/canada/wet-boew/assets/sig-blk-en.svg,Government of Canada,Y
+https://fednor.canada.ca/en,/sites/default/files/image/ss-noms2024-03.jpg,tab 1,N
+https://www.fct-cf.gc.ca/en/home,/content/img/base/FCLogo_nb_e.png,Federal Court,Y
+https://www.canadapost.ca/web/en/home.page,/cpc/assets/cpc/uploads/photography/personal/coin-hero-mobile-2x.jpg,2024 coin sets from the Royal Canadian Mint.,Y
+https://www.international.gc.ca/world-monde/index.aspx?lang=eng,/wcmglobal/frameworks/v4.0.70.1/theme-gcweb-v13.10.1/assets/sig-blk-en.svg,Government of Canada,Y
+https://www.cppinvestments.com/,https://www.cppinvestments.com/wp-content/uploads/2023/12/CEO-YE-Message-Hero-1920x1051-1.jpg,Ceo Ye Message Hero 1920x1051,N
+https://www.publicsafety.gc.ca/index-en.aspx,cnt\_mgs\cmpgns\cndn-trvl-nmbr-wb-ftr-bil.jpg,Canadian Travel Number (CTN),Y
+https://www.ccg-gcc.gc.ca/index-eng.html,https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg,Symbol of the Government of Canada,Y
+https://www.canada.ca/en/services/taxes.html,/content/dam/cra-arc/camp-promo/features/ft-2024-03-08-360x203.jpg,A family eating in their kitchen,Y
+https://cjc-ccm.ca/en,/sites/default/files/2022-08/balance.png,Balance icon,Y
+https://www.statcan.gc.ca/eng/start,/profiles/wetkit/libraries/theme-gcweb/assets/wmms-blk.svg,Symbol of the Government of Canada,Y
+https://ingeniumcanada.org/agriculture,/sites/default/files/styles/thumbnail/public/pictures/2022-03/1529-RC-Goulet-20191112-001-5x7.jpg?h=6ba8788a&itok=1nkqNRQZ,Profile picture for user Ren√©e-Claude Goulet,Y
+https://www.idrc.ca/en,/sites/default/files/styles/card_small/public/2024-02/IDRC_Andrew%20Esiebo_RIA.jpg?h=d374d96c&itok=fsSoJbWP,A young smiling child sits on his mother's lap.,Y
+https://www.ccg-gcc.gc.ca/index-eng.html,https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg,Government of Canada,Y
+https://www.grainscanada.gc.ca/en/,/_images/indexw-hindex/2022/safeguards-en.jpg,Safeguards for Grain Farmers Program.,Y
+,,NUM NON COMPLIANT,5
+,,NUM COMPLIANT,25
