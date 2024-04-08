@@ -50,7 +50,7 @@ The research revealed some interesting findings. We hand-sampled 30 images each 
 
    These images were just a few we found that had non-empty alt-text attributes but didn't contribute any useful information.  
 
-2. After going through 60 images, 30 of which had empty alt-text attributes, and 30 that had non-empty alt-text attributes, we noticed that $\frac{54}{60}$ or $90%$ of the images we looked at use alt-text attributes correctly. To determine the accuracy of our web scraper, we created a binomial confidence interval (with our calculations below). The $z$-score that we chose was %1.96% (that corresponds to the 95% confidence interval). With $\hat{p} = $\frac{54}{60}$ and $n = 60$   
+2. After going through 60 images, 30 of which had empty alt-text attributes, and 30 that had non-empty alt-text attributes, we noticed that $\frac{54}{60}$ or 90% of the images we looked at use alt-text attributes correctly. To determine the accuracy of our web scraper, we created a binomial confidence interval (with our calculations below). The $z$-score that we chose was %1.96% (that corresponds to the 95% confidence interval). With $\hat{p} = \frac{54}{60}$ and $n = 60$, we plugged it into the formula below to calculate our interval.    
 
 
 ![unnamed](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/dac99f8e-5a01-4069-9990-578201935e5b)
