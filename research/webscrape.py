@@ -3,7 +3,10 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import random
 
+random.seed(10)
+empty_alt_text = []
 def get_ca_govt_links():
     url = "https://www.canada.ca/en/government/dept.html"
     response = requests.get(url)
@@ -28,7 +31,7 @@ def get_ca_govt_links():
 def alt_text_prevalence(urls,print_alt_texts=True):
     df_list = []
 
-    for url in urls:
+    for url in urls:    
         try:
             response = requests.get(url)
 
@@ -72,6 +75,13 @@ def alt_text_prevalence(urls,print_alt_texts=True):
                     print(f"NON-COMPLIANT! {url}")
 
                 df_list.append(row_dict)
+
+                # gather empty alt text urls and image source
+                for i, alt_text in enumerate(all_alt_texts):
+                    if alt_text == "":
+                        empty_alt_text.append({"url": url, "image_src": img_tags[i]['src']})
+
+
         except Exception as e:
             continue   
 
@@ -93,3 +103,9 @@ def alt_text_prevalence(urls,print_alt_texts=True):
 if __name__ == "__main__":         
     links = get_ca_govt_links()
     alt_text_prevalence(links, False)
+
+    start, end = 0, len(empty_alt_text) - 1
+
+    for i in range(30):
+        random_num = random.randint(start, end)
+        print(empty_alt_text[i])
