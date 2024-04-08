@@ -45,6 +45,7 @@ However, there was a reasonable assumption that our webscraper may be overcounti
 Automating checking for these qualities is difficult, and so we sought to estimate the error of our webscraper by analyzing a sample by hand. We randomly sampled 60 images (30 with an empty alt text, 30 with a non-empty alt text) among all images our webscraper identified as compliant. For each of these 60 images, we manually verified whether or not our webscraper correctly identified compliant images based on the additional requirements for compliance (images with empty alt text must be decorative, and non-empty alt text must be adequately descriptive). In our sample, we saw a few examples of noncompliance that weren't captured by our webscraper, namely inadequately descriptive alt texts:
 
    The image below had an alt-text attribute of “Nicholas Forget tile”.
+  
   ![unnamed (1)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/ad9f8465-bf73-40ed-b95a-bebd6b74e78a)
 
   This image below had an alt-text attribute of "tab-1".
