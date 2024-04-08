@@ -35,7 +35,7 @@ Anonymized results of the survey can be found in this repo under the [survey fol
 
 Research-based on our small-scale, non-intrusive polling of websites to determine the lack of existing alt-text can be found in the [research](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/tree/main/research) folder along with the [code](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/blob/main/research/webscrape.py) and the [raw data results](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/blob/main/research/output.csv).
 
-The research revealed some interesting findings. We hand-sampled 30 images each that had an empty alt-text attribute and a non-empty alt-text attribute to check for compliance.
+The research revealed some interesting findings. We hand-sampled 30 images each that had an empty alt-text attribute and a non-empty alt-text attribute to check for compliance. This manual verification was needed as our web scraping tool does not have the context to decide for example if an empty alt-text image belongs to a decorative image or an image that provides necessary context. 
 
 1. Even though images followed our definition of compliance (non-empty alt-text attribute), it didn't guarantee that the quality of the alt-text provided enough details about the image.
    The image below had an alt-text attribute of “Nicholas Forget tile”.
@@ -48,6 +48,7 @@ The research revealed some interesting findings. We hand-sampled 30 images each 
    This image below had an alt-text attribute of "play-icon", suggesting it was something name for/by developers. 
    ![unnamed (4)](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/ff6b50ea-c8f5-4ee8-8434-608bda046715)
 
+   These images were just a few that we found that had non-empty alt-text attributes but didn't contribute any useful information.  
 
 2. Secondly we constructed a 95% binomial confidence interval for the accuracy of our web scraper at [82.4%, 97.6%]
    Thus, we are 95% confident that, after accounting for the error of our web scraper, 79.1% to 93.6% of images on Canadian governmental websites follow WCAG 2.0 guidelines.
