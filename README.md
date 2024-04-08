@@ -59,6 +59,4 @@ Among the sample of 60 images, 90% of the images we looked at use alt-text attri
 
 ![unnamed](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/dac99f8e-5a01-4069-9990-578201935e5b)
 
-   We calculated the 95% binomial confidence interval for the accuracy of our web scraper to be [82.4%, 97.6%].
-
-   Thus, we are 95% confident that, after accounting for the error of our web scraper, 79.1% to 93.6% of images on Canadian governmental websites follow WCAG 2.0 guidelines.
+   We calculated the 95% binomial confidence interval for the accuracy of our web scraper to be [82.4%, 97.6%]. Given our webscraper's original estimate of 96% compliance among all images, we are 95% confident that, after accounting for the error of our web scraper, 79.1% to 93.6% of images on Canadian governmental websites follow WCAG 2.0 guidelines.
