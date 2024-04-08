@@ -50,11 +50,11 @@ The research revealed some interesting findings. We hand-sampled 30 images each 
 
    These images were just a few we found that had non-empty alt-text attributes but didn't contribute any useful information.  
 
-2. After going through 60 images, 30 of which had empty alt-text attributes, and 30 that had non-empty alt-text attributes, we noticed that 54/60 or 90% of the images we looked at use alt-text attributes correctly. To determine the accuracy of our web scraper, we created a binomial confidence interval (with out calculations below). The z-score that we chose was 1.96 (it corresponds to the 95% confidence interval). $\frac{4}{3}$    
+2. After going through 60 images, 30 of which had empty alt-text attributes, and 30 that had non-empty alt-text attributes, we noticed that $\frac{54}{60}$ or $90%$ of the images we looked at use alt-text attributes correctly. To determine the accuracy of our web scraper, we created a binomial confidence interval (with our calculations below). The $z$-score that we chose was %1.96% (that corresponds to the 95% confidence interval). With $\hat{p} = $\frac{54}{60}$ and $n = 60$   
 
 
 ![unnamed](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/18638226/dac99f8e-5a01-4069-9990-578201935e5b)
 
-   We then constructed a 95% binomial confidence interval for the accuracy of our web scraper at [82.4%, 97.6%]
+   We calculated the 95% binomial confidence interval for the accuracy of our web scraper to be [82.4%, 97.6%]
 
    Thus, we are 95% confident that, after accounting for the error of our web scraper, 79.1% to 93.6% of images on Canadian governmental websites follow WCAG 2.0 guidelines.
