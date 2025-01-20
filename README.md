@@ -1,4 +1,4 @@
-# CS492-OpenAI-Alt-Text
+# OpenAI Alt-Text Chrome Extension
 Using OpenAI's GPT4-Vision-Preview to Add Alt-Text to Images Missing Them &amp; Increasing Web Accessibility
 
 [![Chrome Web Store Screenshot of Published Chrome Extension](https://github.com/KeshavChawla/CS492-OpenAI-Alt-Text/assets/21203253/55f01370-4964-4929-9e88-acc7cc89b788)](https://chromewebstore.google.com/detail/alt-text-filler/lhjopjegmkjjljgealjmckdblmmekjki)
